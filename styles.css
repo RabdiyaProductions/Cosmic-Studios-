@@ -1,1 +1,434 @@
+:root {
+      --bg: #050814;
+        --bg-elevated: #0c1022;
+          --accent: #ff5c9a;
+            --accent-soft: rgba(255, 92, 154, 0.15);
+              --text: #f5f6ff;
+                --muted: #a4a7c5;
+                  --border-subtle: #22263c;
+                    --radius-lg: 18px;
+                      --radius-sm: 10px;
+                        --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.6);
+                        }
 
+                        *,
+                        *::before,
+                        *::after {
+                          box-sizing: border-box;
+                          }
+
+                          html,
+                          body {
+                            margin: 0;
+                              padding: 0;
+                                background: radial-gradient(circle at top, #151b3a 0, #050814 55%);
+                                  color: var(--text);
+                                    font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+                                        "Segoe UI", sans-serif;
+                                        }
+
+                                        a {
+                                          color: inherit;
+                                            text-decoration: none;
+                                            }
+
+                                            img {
+                                              max-width: 100%;
+                                                display: block;
+                                                }
+
+                                                .container {
+                                                  width: min(1120px, 100% - 32px);
+                                                    margin: 0 auto;
+                                                    }
+
+                                                    /* Header / nav */
+
+                                                    .site-header {
+                                                      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+                                                        backdrop-filter: blur(14px);
+                                                          background: linear-gradient(to bottom, rgba(5, 8, 20, 0.9), transparent);
+                                                            position: sticky;
+                                                              top: 0;
+                                                                z-index: 50;
+                                                                }
+
+                                                                .nav-container {
+                                                                  display: flex;
+                                                                    align-items: center;
+                                                                      justify-content: space-between;
+                                                                        padding: 14px 0;
+                                                                        }
+
+                                                                        .logo {
+                                                                          font-weight: 700;
+                                                                            letter-spacing: 0.06em;
+                                                                              text-transform: uppercase;
+                                                                                font-size: 0.95rem;
+                                                                                }
+
+                                                                                .logo span {
+                                                                                  color: var(--accent);
+                                                                                  }
+
+                                                                                  .site-nav {
+                                                                                    display: flex;
+                                                                                      gap: 18px;
+                                                                                        align-items: center;
+                                                                                          font-size: 0.85rem;
+                                                                                          }
+
+                                                                                          .site-nav a {
+                                                                                            padding: 6px 10px;
+                                                                                              border-radius: 999px;
+                                                                                                color: var(--muted);
+                                                                                                }
+
+                                                                                                .site-nav a.active,
+                                                                                                .site-nav a:hover {
+                                                                                                  color: var(--text);
+                                                                                                    background: rgba(255, 255, 255, 0.04);
+                                                                                                    }
+
+                                                                                                    /* Mobile nav */
+
+                                                                                                    .nav-toggle {
+                                                                                                      display: none;
+                                                                                                        flex-direction: column;
+                                                                                                          gap: 4px;
+                                                                                                            background: none;
+                                                                                                              border: none;
+                                                                                                                padding: 4px;
+                                                                                                                }
+
+                                                                                                                .nav-toggle span {
+                                                                                                                  width: 20px;
+                                                                                                                    height: 2px;
+                                                                                                                      border-radius: 999px;
+                                                                                                                        background: var(--text);
+                                                                                                                        }
+
+                                                                                                                        /* Hero */
+
+                                                                                                                        .hero {
+                                                                                                                          padding: 54px 0 36px;
+                                                                                                                          }
+
+                                                                                                                          .hero-inner {
+                                                                                                                            display: grid;
+                                                                                                                              grid-template-columns: minmax(0, 2fr) minmax(0, 1.3fr);
+                                                                                                                                gap: 32px;
+                                                                                                                                  align-items: start;
+                                                                                                                                  }
+
+                                                                                                                                  .hero h1 {
+                                                                                                                                    font-size: clamp(2.1rem, 5vw, 2.8rem);
+                                                                                                                                      margin-bottom: 10px;
+                                                                                                                                      }
+
+                                                                                                                                      .lead {
+                                                                                                                                        color: var(--muted);
+                                                                                                                                          max-width: 36rem;
+                                                                                                                                          }
+
+                                                                                                                                          .hero-actions {
+                                                                                                                                            margin: 18px 0 10px;
+                                                                                                                                              display: flex;
+                                                                                                                                                flex-wrap: wrap;
+                                                                                                                                                  gap: 10px;
+                                                                                                                                                  }
+
+                                                                                                                                                  .hero-note {
+                                                                                                                                                    font-size: 0.85rem;
+                                                                                                                                                      color: var(--muted);
+                                                                                                                                                      }
+
+                                                                                                                                                      .hero-card {
+                                                                                                                                                        background: var(--bg-elevated);
+                                                                                                                                                          border-radius: var(--radius-lg);
+                                                                                                                                                            padding: 18px 18px 16px;
+                                                                                                                                                              border: 1px solid var(--border-subtle);
+                                                                                                                                                                box-shadow: var(--shadow-soft);
+                                                                                                                                                                  font-size: 0.9rem;
+                                                                                                                                                                  }
+
+                                                                                                                                                                  .hero-card h2 {
+                                                                                                                                                                    margin-top: 0;
+                                                                                                                                                                      margin-bottom: 8px;
+                                                                                                                                                                        font-size: 1rem;
+                                                                                                                                                                        }
+
+                                                                                                                                                                        .hero-card ul {
+                                                                                                                                                                          padding-left: 18px;
+                                                                                                                                                                            margin: 0 0 8px;
+                                                                                                                                                                              color: var(--muted);
+                                                                                                                                                                              }
+
+                                                                                                                                                                              .link-arrow {
+                                                                                                                                                                                font-size: 0.85rem;
+                                                                                                                                                                                  color: var(--accent);
+                                                                                                                                                                                  }
+
+                                                                                                                                                                                  /* Buttons */
+
+                                                                                                                                                                                  .btn {
+                                                                                                                                                                                    display: inline-flex;
+                                                                                                                                                                                      align-items: center;
+                                                                                                                                                                                        justify-content: center;
+                                                                                                                                                                                          padding: 9px 16px;
+                                                                                                                                                                                            border-radius: 999px;
+                                                                                                                                                                                              border: 1px solid transparent;
+                                                                                                                                                                                                font-size: 0.9rem;
+                                                                                                                                                                                                  cursor: pointer;
+                                                                                                                                                                                                    transition: transform 0.12s ease, box-shadow 0.12s ease,
+                                                                                                                                                                                                        background 0.12s ease, border-color 0.12s ease;
+                                                                                                                                                                                                        }
+
+                                                                                                                                                                                                        .btn.primary {
+                                                                                                                                                                                                          background: var(--accent);
+                                                                                                                                                                                                            color: #050814;
+                                                                                                                                                                                                              box-shadow: 0 14px 30px rgba(255, 92, 154, 0.45);
+                                                                                                                                                                                                              }
+
+                                                                                                                                                                                                              .btn.primary:hover {
+                                                                                                                                                                                                                transform: translateY(-1px);
+                                                                                                                                                                                                                  box-shadow: 0 18px 40px rgba(255, 92, 154, 0.6);
+                                                                                                                                                                                                                  }
+
+                                                                                                                                                                                                                  .btn.ghost {
+                                                                                                                                                                                                                    border-color: rgba(255, 255, 255, 0.25);
+                                                                                                                                                                                                                      color: var(--text);
+                                                                                                                                                                                                                        background: transparent;
+                                                                                                                                                                                                                        }
+
+                                                                                                                                                                                                                        .btn.ghost:hover {
+                                                                                                                                                                                                                          background: rgba(255, 255, 255, 0.04);
+                                                                                                                                                                                                                          }
+
+                                                                                                                                                                                                                          /* Generic layout */
+
+                                                                                                                                                                                                                          .page {
+                                                                                                                                                                                                                            padding: 40px 0 50px;
+                                                                                                                                                                                                                            }
+
+                                                                                                                                                                                                                            .page-header h1 {
+                                                                                                                                                                                                                              margin: 0 0 6px;
+                                                                                                                                                                                                                              }
+
+                                                                                                                                                                                                                              .page-header {
+                                                                                                                                                                                                                                margin-bottom: 22px;
+                                                                                                                                                                                                                                }
+
+                                                                                                                                                                                                                                .feature-grid,
+                                                                                                                                                                                                                                .card-grid,
+                                                                                                                                                                                                                                .pricing-grid,
+                                                                                                                                                                                                                                .dashboard-grid {
+                                                                                                                                                                                                                                  margin: 28px 0 8px;
+                                                                                                                                                                                                                                    display: grid;
+                                                                                                                                                                                                                                      gap: 16px;
+                                                                                                                                                                                                                                      }
+
+                                                                                                                                                                                                                                      .feature-card,
+                                                                                                                                                                                                                                      .card,
+                                                                                                                                                                                                                                      .pricing-card,
+                                                                                                                                                                                                                                      .dash-card {
+                                                                                                                                                                                                                                        background: var(--bg-elevated);
+                                                                                                                                                                                                                                          border-radius: var(--radius-lg);
+                                                                                                                                                                                                                                            padding: 16px 16px 18px;
+                                                                                                                                                                                                                                              border: 1px solid var(--border-subtle);
+                                                                                                                                                                                                                                                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.55);
+                                                                                                                                                                                                                                                }
+
+                                                                                                                                                                                                                                                .feature-card h3,
+                                                                                                                                                                                                                                                .card h2,
+                                                                                                                                                                                                                                                .pricing-card h2,
+                                                                                                                                                                                                                                                .dash-card h2 {
+                                                                                                                                                                                                                                                  margin-top: 0;
+                                                                                                                                                                                                                                                  }
+
+                                                                                                                                                                                                                                                  .pill-list {
+                                                                                                                                                                                                                                                    list-style: none;
+                                                                                                                                                                                                                                                      padding: 0;
+                                                                                                                                                                                                                                                        margin: 0;
+                                                                                                                                                                                                                                                          display: flex;
+                                                                                                                                                                                                                                                            flex-wrap: wrap;
+                                                                                                                                                                                                                                                              gap: 8px;
+                                                                                                                                                                                                                                                              }
+
+                                                                                                                                                                                                                                                              .pill-list li {
+                                                                                                                                                                                                                                                                padding: 6px 10px;
+                                                                                                                                                                                                                                                                  border-radius: 999px;
+                                                                                                                                                                                                                                                                    background: rgba(255, 255, 255, 0.04);
+                                                                                                                                                                                                                                                                      font-size: 0.8rem;
+                                                                                                                                                                                                                                                                        color: var(--muted);
+                                                                                                                                                                                                                                                                        }
+
+                                                                                                                                                                                                                                                                        .two-column {
+                                                                                                                                                                                                                                                                          display: grid;
+                                                                                                                                                                                                                                                                            gap: 22px;
+                                                                                                                                                                                                                                                                              grid-template-columns: 1.2fr 1fr;
+                                                                                                                                                                                                                                                                              }
+
+                                                                                                                                                                                                                                                                              .pricing-grid {
+                                                                                                                                                                                                                                                                                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                                                                                                                                                                                                                                                                                }
+
+                                                                                                                                                                                                                                                                                .pricing-card {
+                                                                                                                                                                                                                                                                                  position: relative;
+                                                                                                                                                                                                                                                                                  }
+
+                                                                                                                                                                                                                                                                                  .pricing-card.popular {
+                                                                                                                                                                                                                                                                                    border-color: var(--accent);
+                                                                                                                                                                                                                                                                                      box-shadow: 0 18px 40px rgba(255, 92, 154, 0.5);
+                                                                                                                                                                                                                                                                                      }
+
+                                                                                                                                                                                                                                                                                      .pricing-card .price {
+                                                                                                                                                                                                                                                                                        font-weight: 600;
+                                                                                                                                                                                                                                                                                          margin: 2px 0 6px;
+                                                                                                                                                                                                                                                                                          }
+
+                                                                                                                                                                                                                                                                                          .pricing-card .tagline {
+                                                                                                                                                                                                                                                                                            color: var(--muted);
+                                                                                                                                                                                                                                                                                              font-size: 0.9rem;
+                                                                                                                                                                                                                                                                                              }
+
+                                                                                                                                                                                                                                                                                              .pricing-card ul {
+                                                                                                                                                                                                                                                                                                padding-left: 18px;
+                                                                                                                                                                                                                                                                                                  color: var(--muted);
+                                                                                                                                                                                                                                                                                                  }
+
+                                                                                                                                                                                                                                                                                                  /* Dashboard */
+
+                                                                                                                                                                                                                                                                                                  .dashboard-grid {
+                                                                                                                                                                                                                                                                                                    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+                                                                                                                                                                                                                                                                                                    }
+
+                                                                                                                                                                                                                                                                                                    .status {
+                                                                                                                                                                                                                                                                                                      border-radius: 999px;
+                                                                                                                                                                                                                                                                                                        padding: 2px 8px;
+                                                                                                                                                                                                                                                                                                          font-size: 0.72rem;
+                                                                                                                                                                                                                                                                                                          }
+
+                                                                                                                                                                                                                                                                                                          .status.in-progress {
+                                                                                                                                                                                                                                                                                                            background: var(--accent-soft);
+                                                                                                                                                                                                                                                                                                              color: var(--accent);
+                                                                                                                                                                                                                                                                                                              }
+
+                                                                                                                                                                                                                                                                                                              .status.queued {
+                                                                                                                                                                                                                                                                                                                background: rgba(255, 255, 255, 0.04);
+                                                                                                                                                                                                                                                                                                                  color: var(--muted);
+                                                                                                                                                                                                                                                                                                                  }
+
+                                                                                                                                                                                                                                                                                                                  .status.review {
+                                                                                                                                                                                                                                                                                                                    background: rgba(79, 209, 197, 0.16);
+                                                                                                                                                                                                                                                                                                                      color: #7af2e3;
+                                                                                                                                                                                                                                                                                                                      }
+
+                                                                                                                                                                                                                                                                                                                      /* Form */
+
+                                                                                                                                                                                                                                                                                                                      .form-section {
+                                                                                                                                                                                                                                                                                                                        max-width: 520px;
+                                                                                                                                                                                                                                                                                                                        }
+
+                                                                                                                                                                                                                                                                                                                        .form-row {
+                                                                                                                                                                                                                                                                                                                          display: flex;
+                                                                                                                                                                                                                                                                                                                            flex-direction: column;
+                                                                                                                                                                                                                                                                                                                              margin-bottom: 14px;
+                                                                                                                                                                                                                                                                                                                                font-size: 0.9rem;
+                                                                                                                                                                                                                                                                                                                                }
+
+                                                                                                                                                                                                                                                                                                                                label {
+                                                                                                                                                                                                                                                                                                                                  margin-bottom: 4px;
+                                                                                                                                                                                                                                                                                                                                    color: var(--muted);
+                                                                                                                                                                                                                                                                                                                                    }
+
+                                                                                                                                                                                                                                                                                                                                    input,
+                                                                                                                                                                                                                                                                                                                                    textarea {
+                                                                                                                                                                                                                                                                                                                                      border-radius: var(--radius-sm);
+                                                                                                                                                                                                                                                                                                                                        border: 1px solid var(--border-subtle);
+                                                                                                                                                                                                                                                                                                                                          background: #050814;
+                                                                                                                                                                                                                                                                                                                                            color: var(--text);
+                                                                                                                                                                                                                                                                                                                                              padding: 8px 10px;
+                                                                                                                                                                                                                                                                                                                                                font: inherit;
+                                                                                                                                                                                                                                                                                                                                                }
+
+                                                                                                                                                                                                                                                                                                                                                input:focus,
+                                                                                                                                                                                                                                                                                                                                                textarea:focus {
+                                                                                                                                                                                                                                                                                                                                                  outline: 1px solid var(--accent);
+                                                                                                                                                                                                                                                                                                                                                    border-color: var(--accent);
+                                                                                                                                                                                                                                                                                                                                                    }
+
+                                                                                                                                                                                                                                                                                                                                                    .form-message {
+                                                                                                                                                                                                                                                                                                                                                      margin-top: 10px;
+                                                                                                                                                                                                                                                                                                                                                        font-size: 0.85rem;
+                                                                                                                                                                                                                                                                                                                                                          color: var(--muted);
+                                                                                                                                                                                                                                                                                                                                                          }
+
+                                                                                                                                                                                                                                                                                                                                                          /* Legal pages */
+
+                                                                                                                                                                                                                                                                                                                                                          .legal h2 {
+                                                                                                                                                                                                                                                                                                                                                            margin-top: 22px;
+                                                                                                                                                                                                                                                                                                                                                            }
+
+                                                                                                                                                                                                                                                                                                                                                            /* Footer */
+
+                                                                                                                                                                                                                                                                                                                                                            .site-footer {
+                                                                                                                                                                                                                                                                                                                                                              border-top: 1px solid rgba(255, 255, 255, 0.04);
+                                                                                                                                                                                                                                                                                                                                                                padding: 18px 0 22px;
+                                                                                                                                                                                                                                                                                                                                                                  margin-top: 10px;
+                                                                                                                                                                                                                                                                                                                                                                    font-size: 0.8rem;
+                                                                                                                                                                                                                                                                                                                                                                      color: var(--muted);
+                                                                                                                                                                                                                                                                                                                                                                      }
+
+                                                                                                                                                                                                                                                                                                                                                                      .footer-inner {
+                                                                                                                                                                                                                                                                                                                                                                        display: flex;
+                                                                                                                                                                                                                                                                                                                                                                          justify-content: space-between;
+                                                                                                                                                                                                                                                                                                                                                                            align-items: center;
+                                                                                                                                                                                                                                                                                                                                                                              gap: 12px;
+                                                                                                                                                                                                                                                                                                                                                                              }
+
+                                                                                                                                                                                                                                                                                                                                                                              .footer-links {
+                                                                                                                                                                                                                                                                                                                                                                                display: flex;
+                                                                                                                                                                                                                                                                                                                                                                                  gap: 12px;
+                                                                                                                                                                                                                                                                                                                                                                                  }
+
+                                                                                                                                                                                                                                                                                                                                                                                  .footer-links a {
+                                                                                                                                                                                                                                                                                                                                                                                    color: var(--muted);
+                                                                                                                                                                                                                                                                                                                                                                                    }
+
+                                                                                                                                                                                                                                                                                                                                                                                    /* Responsive */
+
+                                                                                                                                                                                                                                                                                                                                                                                    @media (max-width: 768px) {
+                                                                                                                                                                                                                                                                                                                                                                                      .hero-inner {
+                                                                                                                                                                                                                                                                                                                                                                                          grid-template-columns: 1fr;
+                                                                                                                                                                                                                                                                                                                                                                                            }
+
+                                                                                                                                                                                                                                                                                                                                                                                              .two-column {
+                                                                                                                                                                                                                                                                                                                                                                                                  grid-template-columns: 1fr;
+                                                                                                                                                                                                                                                                                                                                                                                                    }
+
+                                                                                                                                                                                                                                                                                                                                                                                                      .site-nav {
+                                                                                                                                                                                                                                                                                                                                                                                                          position: absolute;
+                                                                                                                                                                                                                                                                                                                                                                                                              inset-inline: 0;
+                                                                                                                                                                                                                                                                                                                                                                                                                  top: 56px;
+                                                                                                                                                                                                                                                                                                                                                                                                                      padding: 10px 16px 12px;
+                                                                                                                                                                                                                                                                                                                                                                                                                          flex-direction: column;
+                                                                                                                                                                                                                                                                                                                                                                                                                              background: #050814;
+                                                                                                                                                                                                                                                                                                                                                                                                                                  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+                                                                                                                                                                                                                                                                                                                                                                                                                                      display: none;
+                                                                                                                                                                                                                                                                                                                                                                                                                                        }
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                          .site-nav.open {
+                                                                                                                                                                                                                                                                                                                                                                                                                                              display: flex;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                }
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                  .nav-toggle {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                      display: flex;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                        }
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                          .footer-inner {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                              flex-direction: column-reverse;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                  align-items: flex-start;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                    }
+}
