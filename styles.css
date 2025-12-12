@@ -6,7 +6,75 @@
 .brand-text{font-size:54px;font-weight:800;letter-spacing:.5px;line-height:1}
 .nav{display:flex;gap:14px;align-items:center;justify-content:flex-end;flex-wrap:wrap}
 <div class="hero-title">Kids & Juniors Library</div>
-.hero-title{font-size:80px;font-weight:800;margin:0 0 10px 0}
+.hero-title{font-size:80px;font-weight:800;margin:0 0 10px 0}.site-header{
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: grid;
+  grid-template-columns: 120px 1fr 420px;
+  align-items: center;
+  padding: 18px 22px;
+}
+
+.header-left{ display:flex; align-items:center; }
+.header-center{ text-align:center; }
+.header-right{ display:flex; justify-content:flex-end; }
+.hero{
+  display: grid;
+  grid-template-columns: 220px 1fr 220px;
+  gap: 18px;
+  align-items: start;
+  padding: 18px 22px;
+}
+
+.hero-side{
+  display:flex;
+  justify-content:center;
+  padding-top: 10px;
+}
+
+.hero-img{
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  border-radius: 16px;
+  opacity: 0.95;
+}
+
+@media (max-width: 1100px){
+  .hero{ grid-template-columns: 1fr; }
+  .hero-side{ display:none; }
+}
+.brand-icon{
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  display: block;
+}
+
+.brand-title{
+  margin: 0;
+  font-size: clamp(34px, 4vw, 56px);
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.top-nav{
+  display:flex;
+  align-items:center;
+  gap: 16px;
+}
+
+.top-nav a{
+  text-decoration:none;
+  opacity: .9;
+}
+
+.btn.btn-primary{
+  padding: 10px 16px;
+  border-radius: 999px;
+}
+
 :root {
       --bg: #050814;
         --bg-elevated: #0c1022;
