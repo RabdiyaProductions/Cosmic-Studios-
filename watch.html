@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cosmic Studios — Watch</title>
+  <style>
+    body{font-family:system-ui,Arial;margin:0;background:#0b0f14;color:#e8eef6}
+    header{padding:16px 18px;border-bottom:1px solid #1a2230;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+    a{color:#9bd1ff;text-decoration:none}
+    .wrap{max-width:1100px;margin:0 auto;padding:18px}
+    .bar{border:1px solid #1a2230;background:#0f1621;border-radius:14px;padding:12px}
+    .tabs{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    .tab{padding:10px 12px;border-radius:12px;border:1px solid #2a3a52;background:#101a29;cursor:pointer}
+    .tab.active{background:#17304a;border-color:#2a6cb0}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:14px}
+    .tile{border:1px solid #1a2230;border-radius:14px;background:#0f1621;padding:12px}
+    .mini{font-size:12px;opacity:.8}
+    input{padding:10px 12px;border-radius:10px;border:1px solid #2a3a52;background:#0b0f14;color:#e8eef6}
+    button{padding:10px 12px;border-radius:12px;border:1px solid #2a6cb0;background:#17304a;color:#e8eef6;cursor:pointer}
+    .hidden{display:none}
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <b>Cosmic Studios — Watch</b><br/>
+      <span class="mini">Subscription unlocks all content</span>
+    </div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <a href="index.html">Home</a>
+      <a href="help.html">Help</a>
+      <a href="{{COSMIC_SUB_STRIPE_LINK}}">Subscribe</a>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="bar">
+      <b>Access</b>
+      <div class="mini" style="margin-top:6px">
+        MVP gate: after subscribing, you’ll be given an access code (we can automate later).
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+        <input id="code" placeholder="Enter access code" />
+        <button onclick="unlock()">Unlock</button>
+        <button onclick="lock()" style="background:#101a29;border-color:#2a3a52">Lock</button>
+      </div>
+      <div id="status" class="mini" style="margin-top:10px"></div>
+    </div>
+
+    <div class="tabs">
+      <div class="tab active" id="tabSeries" onclick="show('series')">Series</div>
+      <div class="tab" id="tabMovies" onclick="show('movies')">Movies</div>
+    </div>
+
+    <div id="lockedMsg" class="bar" style="margin-top:14px">
+      <b>Locked</b>
+      <div class="mini" style="margin-top:6px">
+        Subscribe to unlock the full library. If you already subscribed, enter your access code above.
+      </div>
+    </div>
+
+    <div id="content" class="hidden">
+      <div id="series" class="grid">
+        <!-- Replace placeholders with your embedded full content (e.g. unlisted video embeds) -->
+        <div class="tile" id="kids">
+          <b>Kids Series 01</b>
+          <div class="mini">Under-6 · 8 episodes</div>
+          <div class="mini" style="margin-top:8px">Embed link: {{KIDS_SERIES_01_EMBED}}</div>
+        </div>
+        <div class="tile" id="juniors">
+          <b>Juniors Series 01</b>
+          <div class="mini">6–12 · 10 episodes</div>
+          <div class="mini" style="margin-top:8px">Embed link: {{JUNIORS_SERIES_01_EMBED}}</div>
+        </div>
+      </div>
+
+      <div id="movies" class="grid hidden">
+        <div class="tile">
+          <b>Movie 01</b>
+          <div class="mini">Family / PG</div>
+          <div class="mini" style="margin-top:8px">Embed link: {{MOVIE_01_EMBED}}</div>
+        </div>
+        <div class="tile">
+          <b>Movie 02</b>
+          <div class="mini">Family / PG</div>
+          <div class="mini" style="margin-top:8px">Embed link: {{MOVIE_02_EMBED}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script>
+  // MVP only. Replace with real auth later.
+  const ACCESS_KEY = "{{COSMIC_ACCESS_CODE}}"; // you set this value
+  function isUnlocked(){ return localStorage.getItem("cosmic_unlocked")==="1"; }
+  function render(){
+    const locked = !isUnlocked();
+    document.getElementById("lockedMsg").classList.toggle("hidden", !locked);
+    document.getElementById("content").classList.toggle("hidden", locked);
+    document.getElementById("status").textContent = locked ? "Status: Locked" : "Status: Unlocked";
+  }
+  function unlock(){
+    const c = (document.getElementById("code").value || "").trim();
+    if(!c){ alert("Enter code"); return; }
+    if(c === ACCESS_KEY){
+      localStorage.setItem("cosmic_unlocked","1");
+      render();
+    } else {
+      alert("Wrong code");
+    }
+  }
+  function lock(){
+    localStorage.removeItem("cosmic_unlocked");
+    render();
+  }
+  function show(which){
+    document.getElementById("tabSeries").classList.toggle("active", which==="series");
+    document.getElementById("tabMovies").classList.toggle("active", which==="movies");
+    document.getElementById("series").classList.toggle("hidden", which!=="series");
+    document.getElementById("movies").classList.toggle("hidden", which!=="movies");
+  }
+  render();
+</script>
+</body>
+</html>
