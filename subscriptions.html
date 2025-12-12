@@ -1,103 +1,68 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Subscriptions – Cosmic Studios</title>
-        <link rel="stylesheet" href="styles.css" />
-        </head>
-        <body>
-        <header class="site-header">
-          <div class="container nav-container">
-              <a href="index.html" class="logo">Cosmic<span>Studios</span></a>
-                  <button class="nav-toggle" aria-label="Toggle navigation">
-                        <span></span><span></span><span></span>
-                            </button>
-                                <nav class="site-nav">
-                                      <a href="index.html">Home</a>
-                                            <a href="about.html">About</a>
-                                                  <a href="content.html">Content</a>
-                                                        <a href="plans.html">Plans</a>
-                                                              <a href="subscriptions.html" class="active">Subscriptions</a>
-                                                                    <a href="app.html">App</a>
-                                                                          <a href="dashboard.html">Dashboard</a>
-                                                                                <a href="contact.html">Contact</a>
-                                                                                    </nav>
-                                                                                      </div>
-                                                                                      </header>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cosmic Studios — Subscribe</title>
+  <style>
+    body{font-family:system-ui,Arial;margin:0;background:#0b0f14;color:#e8eef6}
+    header{padding:20px 18px;border-bottom:1px solid #1a2230;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+    a{color:#9bd1ff;text-decoration:none}
+    .wrap{max-width:900px;margin:0 auto;padding:18px}
+    .card{border:1px solid #1a2230;border-radius:14px;padding:16px;background:#0f1621;margin-top:14px}
+    .btn{display:inline-block;padding:10px 12px;border-radius:12px;border:1px solid #2a3a52;background:#101a29}
+    .btn.primary{background:#17304a;border-color:#2a6cb0}
+    .mini{font-size:12px;opacity:.8;line-height:1.4}
+    ul{margin:10px 0 0 18px}
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <b style="font-size:18px">Cosmic Studios</b><br/>
+      <span class="mini">Subscription unlocks the full Kids & Juniors library</span>
+    </div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <a href="index.html">Home</a>
+      <a href="watch.html">Watch</a>
+      <a href="help.html">Help</a>
+    </div>
+  </header>
 
-                                                                                      <main class="page container">
-                                                                                        <header class="page-header">
-                                                                                            <h1>Subscription models</h1>
-                                                                                                <p class="lead">
-                                                                                                      Keep the studio on standby with predictable monthly support.
-                                                                                                          </p>
-                                                                                                            </header>
+  <div class="wrap">
+    <div class="card">
+      <h1 style="margin:0 0 6px 0;font-size:22px">Subscribe</h1>
+      <div class="mini">
+        One plan. Instant access to all current and future Cosmic Studios kids & juniors content while your subscription is active.
+      </div>
 
-                                                                                                              <section class="card-grid">
-                                                                                                                  <article class="card">
-                                                                                                                        <h2>Light Orbit</h2>
-                                                                                                                              <p>Up to two content drops per month plus emergency tweaks.</p>
-                                                                                                                                  </article>
-                                                                                                                                      <article class="card">
-                                                                                                                                            <h2>Deep Space</h2>
-                                                                                                                                                  <p>Weekly content, IP expansion, and ongoing creative direction.</p>
-                                                                                                                                                      </article>
-                                                                                                                                                          <article class="card">
-                                                                                                                                                                <h2>Custom Constellation</h2>
-                                                                                                                                                                      <p>Bespoke agreement mapped to your full empire roadmap.</p>
-                                                                                                                                                                          </article>
-                                                                                                                                                                            </section>
-                                                                                                                                                                            </main>
+      <ul class="mini">
+        <li>Kids (Under 6) + Juniors (6–12)</li>
+        <li>Series + Movies tabs</li>
+        <li>Cancel anytime via Stripe</li>
+      </ul>
 
-                                                                                                                                                                            <footer class="site-footer">
-                                                                                                                                                                              <div class="container footer-inner">
-                                                                                                                                                                                  <p>© <span id="year"></span> Cosmic Studios. All rights reserved.</p>
-                                                                                                                                                                                      <div class="footer-links">
-                                                                                                                                                                                            <a href="privacy.html">Privacy</a>
-                                                                                                                                                                                                  <a href="terms.html">Terms</a>
-                                                                                                                                                                                                      </div>
-                                                                                                                                                                                                        </div>
-                                                                                                                                                                                                        </footer>
+      <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
+        <a class="btn primary" target="_blank" rel="noopener noreferrer"
+           href="https://buy.stripe.com/cNi3cv2iL0EKfVPbcqaMU06">
+          Subscribe (Stripe)
+        </a>
+        <a class="btn" href="watch.html">Browse first</a>
+      </div>
 
-                                                                                                                                                                                                        <script src="script.js"></script>
-                                                                                                                                                                                                        </body>
-                                                                                                                                                                                                        </html><!DOCTYPE html>
-                                                                                                                                                                                                        <html>
-                                                                                                                                                                                                        <head>
-                                                                                                                                                                                                        <title>Cosmic Studios – Subscriptions</title>
-                                                                                                                                                                                                        <link rel="stylesheet" href="styles.css">
-                                                                                                                                                                                                        </head>
-                                                                                                                                                                                                        <body>
-                                                                                                                                                                                                        <h1>Choose Your Cosmic Subscription</h1>
+      <div class="mini" style="margin-top:12px">
+        After checkout, Stripe will return you to this site. If anything goes wrong, use Help → Support.
+      </div>
+    </div>
 
-                                                                                                                                                                                                        <a href="https://buy.stripe.com/YOUR_COSMIC_STRIPE_LINK" class="btn-primary" target="_blank">
-                                                                                                                                                                                                           Subscribe Now
-                                                                                                                                                                                                           </a>
-
-                                                                                                                                                                                                           </body>
-                                                                                                                                                                                                           </html><section class="subscription-section">
-                                                                                                                                                                                                              <h1>Subscribe to Cosmic Studios</h1>
-                                                                                                                                                                                                                <p>
-                                                                                                                                                                                                                    One simple monthly plan. Instant access to all current and future Cosmic
-                                                                                                                                                                                                                        Studios creator content while your subscription is active.
-                                                                                                                                                                                                                          </p>
-
-                                                                                                                                                                                                                            <div class="subscription-card">
-                                                                                                                                                                                                                                <p class="price">£14.99 / month</p>
-
-                                                                                                                                                                                                                                    <a
-                                                                                                                                                                                                                                          href="https://buy.stripe.com/cNi3cv2iL0EKfVPbcqaMU06"
-                                                                                                                                                                                                                                                class="btn btn-primary"
-                                                                                                                                                                                                                                                      target="_blank"
-                                                                                                                                                                                                                                                            rel="noopener noreferrer"
-                                                                                                                                                                                                                                                                >
-                                                                                                                                                                                                                                                                      Subscribe Now
-                                                                                                                                                                                                                                                                          </a>
-
-                                                                                                                                                                                                                                                                              <p class="note">
-                                                                                                                                                                                                                                                                                    Payments are securely processed by Stripe. You can cancel any time via
-                                                                                                                                                                                                                                                                                          your Stripe receipt or by contacting support.
-                                                                                                                                                                                                                                                                                              </p>
-                                                                                                                                                                                                                                                                                                </div>
-                                                                                                                                                                                                                                                                                                </section>
+    <div class="card">
+      <b>Stripe Return Pages</b>
+      <div class="mini" style="margin-top:6px">
+        Set these in Stripe Checkout:
+        <br/>Success URL: <code>https://rabdiyaproductions.github.io/Cosmic-Studios-/success.html</code>
+        <br/>Cancel URL: <code>https://rabdiyaproductions.github.io/Cosmic-Studios-/cancel.html</code>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
