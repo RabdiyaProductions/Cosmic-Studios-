@@ -1,3 +1,12 @@
+.site-header{padding:18px;border-bottom:1px solid #1a2230}
+.header-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px}
+.header-spacer{height:1px}
+.brand{display:flex;align-items:center;gap:14px;justify-content:center}
+.logo{width:46px;height:46px;border-radius:10px}
+.brand-text{font-size:54px;font-weight:800;letter-spacing:.5px;line-height:1}
+.nav{display:flex;gap:14px;align-items:center;justify-content:flex-end;flex-wrap:wrap}
+<div class="hero-title">Kids & Juniors Library</div>
+.hero-title{font-size:80px;font-weight:800;margin:0 0 10px 0}
 :root {
       --bg: #050814;
         --bg-elevated: #0c1022;
